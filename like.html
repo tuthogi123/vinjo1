@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 2;
+        }
+
+        .menu.show-menu {
+            display: flex;
+        }
+
+        .you-may-like {
+            margin-top: 20px;
+          
+            padding: 10px;
+        }
+
+        .you-may-like-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .you-may-like-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .you-may-like-item img {
+            width: 100px;
+            height: 75px;
+            margin-right: 10px;
+        }
+
+        .you-may-like-description {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</div>
+    <div class="menu">
+        <div class="menu-item menu-item-right">Account Settings</div>
+        <a href="login.html">
+            <div class="menu-item menu-item-right">Account</div>
+        </a>
+    </div>
+
+ 
+
+    <div class="you-may-like">
+        <div class="you-may-like-title">You May Like This</div>
+        <div class="you-may-like-item">
+            <img src="images/like1.jpg" alt="You May Like Image 1">
+            <div class="you-may-like-description">
+                <p>Description 1</p>
+                <p>About 1</p>
+            </div>
+        </div>
+        <div class="you-may-like-item">
+            <img src="images/like2.jpg" alt="You May Like Image 2">
+            <div class="you-may-like-description">
+                <p>Description 2</p>
+                <p>About 2</p>
+            </div>
+        </div>
+     
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show-menu');
+        }
+    </script>
+</body>
+
+</html>

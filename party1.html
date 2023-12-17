@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parties</title>
+    <style>
+        /* Add your styles specific to the parties section here */
+        /* ... Your existing styles ... */
+        .party-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="party-container">
+      
+    </div>
+
+    <!-- Party Details Container -->
+    <div id="party-details-container">
+        <h2 id="party-name"></h2>
+        <p id="party-date"></p>
+        <p id="party-time"></p>
+        <p id="party-venue"></p>
+        <p id="party-Description"></p>
+
+        <!-- Add a link to the party form -->
+        <a href="#" class="party-link" onclick="showPartyForm()">Upload Details</a>
+    </div>
+
+    <!-- Party Form Container -->
+    <div class="party-form" id="party-form-container">
+        <h2>Upload Details for Party</h2>
+        <form id="party-form">
+            <!-- Add form fields for party details (date, time, venue, etc.) -->
+            <label for="party-date">Date:</label>
+            <input type="text" id="party-date" name="party-date" required>
+            <br>
+
+            <label for="party-time">Time:</label>
+            <input type="text" id="party-time" name="party-time" required>
+            <br>
+
+            <label for="party-venue">Venue:</label>
+            <input type="text" id="party-venue" name="party-venue" required>
+            <br>
+
+            <label for="party-venue">Description:</label>
+            <input type="text" id="party-Description" name="party-Description" required>
+            <br>
+
+
+            <!-- Add more form fields as needed -->
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function showPartyDetails(partyNumber) {
+            // ... Existing code to show party details ...
+
+            // Show the link to the party form
+            document.getElementById("party-form-container").style.display = "block";
+        }
+
+        function showPartyForm() {
+            // Hide party details container
+            document.getElementById("party-details-container").style.display = "none";
+            // Show party form container
+            document.getElementById("party-form-container").style.display = "block";
+        }
+
+        // Add JavaScript code to handle form submission (requires server-side processing)
+        document.getElementById("party-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents the default form submission (which would reload the page)
+            // Add code to handle the form data (send it to the server, store it, etc.)
+            alert("Form submitted! (Note: Server-side processing is required for a complete solution)");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        .profile-container {
+            display: none;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .profile-section {
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        #profilePictureContainer {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #profilePicture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #profilePictureInput {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .links-container {
+            display: none;
+            justify-content: space-between; 
+            border-top: 20px solid #ccc; 
+            padding: 10px 0; 
+            margin-top: 20px;
+            flex-direction:row ;
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container" id="loginForm">
+        <h2>Login</h2>
+        <form onsubmit="return loginUser()">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showRegistration()">Register</a></p>
+    </div>
+
+    <div class="container" id="registrationForm" style="display: none;">
+        <h2>Registration</h2>
+        <form onsubmit="return registerUser()">
+            <input type="text" id="registerUsername" placeholder="Username" required>
+            <input type="password" id="registerPassword" placeholder="Password" required>
+    
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+
+    <div class="profile-container" id="profilePage" style="display: none;">
+        <h2>Welcome to your profile</h2>
+        <div class="profile-section" id="profileNameSection">
+            <p>Name: </p>
+        </div>
+        <div class="profile-section">
+            <div id="profilePictureContainer">
+                <img id="profilePicture" src="icon_placeholder.png" alt="Profile Picture">
+                <input type="file" id="profilePictureInput" accept="image/*" onchange="displayProfilePicture()">
+            </div>
+        </div>
+
+     
+        <div class="links-container" id="linkContainer" style="display: none;">
+            <a class="link1" href="campx.html">Campx</a>
+            <a class="link2" href="#">Fixer</a>
+            <a class="link3" href="#">Studx</a>
+            <a class="link4" href="#">Contact  </a>
+            <a class="link5" href="#">Rental</a>
+            <a class="link6" href="#">Uncleeeas</a>
+        </div>
+    </div>
+    <script>
+        function showRegistration() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registrationForm').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registrationForm').style.display = 'none';
+        }
+
+        function loginUser() {
+            var username = document.getElementById('loginUsername').value;
+            var password = document.getElementById('loginPassword').value;
+
+          
+            if (username === 'demo' && password === 'demo') {
+                alert('Login successful!');
+                return false; 
+            } else {
+                alert('Invalid username or password');
+                return false;
+            }
+        }
+
+        function registerUser() {
+            var username = document.getElementById('registerUsername').value;
+            var password = document.getElementById('registerPassword').value;
+
+         
+            alert('Registration successful!');
+           
+            document.getElementById('registrationForm').style.display = 'none';
+
+
+            document.getElementById('linkContainer').style.display = 'flex';
+
+
+          
+            document.getElementById('profilePage').style.display = 'block';
+
+            document.getElementById('profileNameSection').innerHTML = '<p>Name: ' + username + '</p>';
+
+
+            
+            document.getElementById('registerUsername').value = '';
+            document.getElementById('registerPassword').value = '';
+
+            function displayProfilePicture() {
+    var profilePictureInput = document.getElementById('profilePictureInput');
+    var profilePicture = document.getElementById('profilePicture');
+
+    if (profilePictureInput.files && profilePictureInput.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            profilePicture.src = e.target.result;
+        };
+
+        reader.readAsDataURL(profilePictureInput.files[0]);
+    }
+}
+           
+
+            return true; 
+        }
+    </script>
+</body>
+
+</html>

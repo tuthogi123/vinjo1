@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; 
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background-color: #333; 
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu {
+                width: 100%;
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</div>
+    <div class="menu">
+        <div class="menu-item menu-item-right">Account Settings</div>
+       <a href="login.html"> <div class="menu-item menu-item-right">Account</div> </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
+</body>
+</html>

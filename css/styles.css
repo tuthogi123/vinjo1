@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Background color */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    background-color: #333; /* Hamburger button background color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #ddd;
+}
+
+.menu-item-right {
+    text-align: right;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navigation-button {
+    background-color: #007bff; /* Default button background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.navigation-button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+
+.menu.show-menu {
+    display: flex;
+}
+#menuContainer {
+    display: none;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+.show-menu {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.show-menu a {
+    text-decoration: none;
+    margin-right: 10px;
+}

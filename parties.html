@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parties</title>
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .party-container {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .party-item {
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 0 10px 20px 10px;
+            text-align: center;
+        }
+
+        .party-item img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .party-details {
+            font-size: 16px;
+        }
+
+    
+        .party-link {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+       
+        #party-details-container {
+            display: none;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="party-container" id="party-container">
+      
+        <div class="party-item">
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(1)">
+                <img src="images/image6.jpg" alt="Party 1">
+                <div class="party-details">
+                    <h1>paty 1</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="party-item">
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(2)">
+                <img src="images/image7.jpg" alt="Party 2">
+                <div class="party-details">
+                   <h1> party 2</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="party-item">
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(3)">
+                <img src="images/image8.jpg" alt="Party 3">
+                <div class="party-details">
+                   <h1> party 3</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="party-item">
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(4)">
+                <img src="images/image9.jpg" alt="Party 4">
+                <div class="party-details">
+                    <h1>party 4</h1>
+                </div>
+            </a>
+        </div>
+      
+    </div>
+
+
+    <div id="party-details-container">
+        <h2 id="party-name"></h2>
+        <p id="party-date"></p>
+        <p id="party-time"></p>
+        <p id="party-venue"></p>
+    </div>
+
+    <script>
+        function showPartyDetails(partyNumber) {
+          
+            const partyDetails = [
+                { name: "Party 1", date: "January 15, 2023", time: "8:00 PM", venue: "Party Venue 1" },
+                { name: "Party 2", date: "February 10, 2023", time: "7:30 PM", venue: "Party Venue 2" },
+                { name: "Party 3", date: "March 20, 2023", time: "9:00 PM", venue: "Party Venue 3" },
+                { name: "Party 4", date: "March 22, 2023", time: "9:30 PM", venue: "Party Venue 4" }
+            ];
+
+          
+            const selectedParty = partyDetails[partyNumber - 1];
+
+           
+            document.getElementById("party-name").innerText = selectedParty.name;
+            document.getElementById("party-date").innerText = "Date: " + selectedParty.date;
+            document.getElementById("party-time").innerText = "Time: " + selectedParty.time;
+            document.getElementById("party-venue").innerText = "Venue: " + selectedParty.venue;
+            document.getElementById("party-details-container").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

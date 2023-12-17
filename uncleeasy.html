@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+    width: 300px; 
+    height: 20px; 
+    padding: 10px; 
+    font-size: 16px; 
+}
+
+
+        .tab-container {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 10px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+            background-color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            background-color: #fff;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        #sellForm {
+            display: none;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #sellForm label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #sellForm input,
+        #sellForm textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #sellForm button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #sellForm button:hover {
+            background-color: #45a049;
+        }
+
+        #postForm {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#postForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#postForm input,
+#postForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#postForm button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#postForm button:hover {
+    background-color: #2980b9;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Uncleeeas</h1>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="button">Search</button>
+    </div>
+
+    <div class="tab-container">
+        <div class="tab" onclick="showTab('products')">Products</div>
+        <div class="tab" onclick="showTab('location')">Location</div>
+        <div class="tab" onclick="showTab('sell')">Sell</div>
+        <div class="tab" onclick="showTab('post')">Post</div>
+    </div>
+
+    <div id="products" class="tab-content">
+        <h2>Products Module</h2>
+        
+    </div>
+
+    <div id="location" class="tab-content">
+        <h2>Location Module</h2>
+      
+    </div>
+
+    <div id="sell" class="tab-content">
+        <h2>Sell Module</h2>
+        <form id="sellForm" style="display: none;">
+            <label for="sellPhoto">Photo:</label>
+            <input type="file" id="sellPhoto" name="photo"><br>
+    
+            <label for="sellDescription">Description:</label>
+            <textarea id="sellDescription" name="description"></textarea><br>
+    
+            <label for="sellPhone">Phone number:</label>
+            <input type="tel" id="sellPhone" name="phone"><br>
+    
+            <label for="sellLocation">Location:</label>
+            <input type="text" id="sellLocation" name="location"><br>
+    
+            <button type="button" onclick="submitSellForm()">Send</button>
+        </form>
+    </div>
+    
+    <div id="post" class="tab-content">
+        <h2>Post Module</h2>
+        <form id="postForm" style="display: none;">
+            <label for="postPhoto">Photo:</label>
+            <input type="file" id="postPhoto" name="photo"><br>
+    
+            <label for="postDescription">Description:</label>
+            <textarea id="postDescription" name="description"></textarea><br>
+    
+            <label for="postPhone">Phone number:</label>
+            <input type="tel" id="postPhone" name="phone"><br>
+    
+            <label for="postLocation">Location:</label>
+            <input type="text" id="postLocation" name="location"><br>
+    
+            <button type="button" onclick="submitPostForm()">Send</button>
+        </form>
+    </div>
+
+    <script>
+
+function showSellForm() {
+    var sellForm = document.getElementById('sellForm');
+    sellForm.style.display = 'block';
+}
+
+function showPostForm() {
+    var postForm = document.getElementById('postForm');
+    postForm.style.display = 'block';
+}
+    function showTab(tabId) {
+    var tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(function (tabContent) {
+        tabContent.classList.remove('active');
+    });
+
+    var selectedTabContent = document.getElementById(tabId);
+    selectedTabContent.classList.add('active');
+
+    if (tabId === 'sell') {
+        showSellForm();
+    } else if (tabId === 'post') {
+        showPostForm(); 
+    }
+}
+
+        function submitSellForm() {
+
+            var formData = {
+        photo: document.getElementById('sellPhoto').value,
+        description: document.getElementById('sellDescription').value,
+        phone: document.getElementById('sellPhone').value,
+        location: document.getElementById('sellLocation').value
+    };
+    
+
+
+
+        
+        fetch('/submit-form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Form submitted successfully!');
+            } else {
+                alert('Error submitting form. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An unexpected error occurred. Please try again.');
+        });
+    }
+    function submitPostForm() {
+    var formData = {
+        photo: document.getElementById('postPhoto').value,
+        description: document.getElementById('postDescription').value,
+        phone: document.getElementById('postPhone').value,
+        location: document.getElementById('postLocation').value
+    };
+
+    fetch('/submit-post', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        
+        if (data.success) {
+            alert('Form submitted successfully!');
+            updateProductTab();
+        } else {
+            alert('Error submitting form. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An unexpected error occurred. Please try again.');
+    });
+}
+
+
+    function updateProductTab() {
+        fetch('/get-updated-products')
+            .then(response => response.json())
+            .then(data => {
+        
+             Example: document.getElementById('products').innerHTML = data.products;
+            })
+            .catch(error => {
+                console.error('Error updating product tab:', error);
+            });
+    }
+    </script>
+
+</body>
+</html>

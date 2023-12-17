@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: green;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-y: auto; 
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background-color: blue; 
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 2;
+        }
+
+        .menu.show-menu {
+            display: flex;
+        }
+
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .menu {
+                width: 100%;
+                top: 80px;
+                right: 0;
+            }
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: row-reverse; 
+            align-items: center;
+            justify-content: flex-end; 
+            padding: 10px;
+            background-color: transparent; 
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: black;
+            display: inline-block; 
+            margin-left: 50px; 
+        }
+
+        .link-name {
+            padding: 10px;
+            text-align: center;
+            background-color: transparent; 
+            border-radius: 0 0 5px 5px;
+            box-sizing: border-box;
+        }
+
+        .trending-list {
+    display: flex;
+    flex-wrap: wrap; 
+    
+    margin-top: 20px;
+    /* justify-content: flex-end; */
+}
+
+.trending-item {
+    flex-basis: calc(50% - 10px); 
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.you-may-like {
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.you-may-like-item {
+    flex-basis: calc(50% - 10px); 
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+        .trending-item img {
+    width: 250px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+        .advertisement {
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px; 
+            white-space: nowrap; 
+        }
+
+        .advertisement img {
+            width: 200px; 
+            height: 150px; 
+            margin-right: 10px; 
+            animation: moveLeft 3s linear infinite; 
+        }
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+      
+
+.you-may-like-item img {
+    width: 200px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.you-may-like-description {
+    flex: 1;
+}
+
+.links-container a {
+        margin-left: 20px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}.links-container a {
+        margin-left: 20px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</div>
+    <div class="menu">
+        <div class="menu-item menu-item-right">Account Settings</div>
+        <a href="login.html">
+            <div class="menu-item menu-item-right">Account</div>
+        </a>
+    </div>
+
+    <div class="links-container">
+        <a class="link1" href="index.html">
+            <div class="link-content">
+                <div class="link-name">Campx</div>
+            </div>
+        </a>
+        <a class="link2" href="fixer.html">
+            <div class="link-content">
+                <div class="link-name">Fixer</div>
+            </div>
+        </a>
+        <a class="link3" href="#">
+            <div class="link-content">
+                <div class="link-name">Studx</div>
+            </div>
+        </a>
+        <a class="link5" href="#">
+            <div class="link-content">
+                <div class="link-name">Rental</div>
+            </div>
+        </a>
+        <a class="link6" href="uncleeasy.html">
+            <div class="link-content">
+                <div class="link-name">Uncleeeas</div>
+            </div>
+        </a>
+    </div>
+
+
+    <h>Advertisement</h>
+    <div class="advertisement">
+        <img src="images/advertisement1.jpeg" alt="Advertisement Image 1">
+        <img src="images/advertisement2.jpeg" alt="Advertisement Image 2">
+        <img src="images/advertisement3.jpeg" alt="Advertisement Image 3">
+        <img src="images/advertisement4.jpeg" alt="Advertisement Image 4">
+        <img src="images/advertisement5.jpeg" alt="Advertisement Image 5">
+        <img src="images/advertisement6.jpeg" alt="Advertisement Image 5">
+    
+    
+    
+    </div>
+    <div class="footer">
+        <h1>Trending</h1>
+        <div class="trending-list">
+            <div class="trending-item events">
+                <img src="images/trending1.jpeg" alt="Events Image">
+                <div class="trending-item-text"></div>
+                <p>Python tutor needed with<br> 1 or more years<br>
+                    experience and with more
+                    <br> than 5 complete <br> python projects
+                    @10000ksh per month
+                </p>
+                <p>Book now</p>
+            </div>
+            <div class="trending-item sports">
+                <img src="images/trending2.jpeg" alt="Sports Image">
+                <div class="trending-item-text"></div>
+                <p>Java tutor needed with one
+                    <br> or more years experience and with <br>
+                    at least 5 or more complete java projects <br>
+                    @10000ksh per month
+                </p>
+                <p>Book now</p>
+            </div>
+        </div>
+        <div class="trending-list">
+            <div class="trending-item Entertainment">
+                <img src="images/trending3.jpeg" alt="Entertainment Image">
+                <div class="trending-item-text"></div>
+                <p>Unclog kitchen sink <br>
+                    @150ksh
+                </p>
+                <p>Book now</p>
+            </div>
+        </div>
+    </div>
+    
+    <h1>You may like this </h1>
+    <div class="you-may-like">
+        <div class="you-may-like-title"></div>
+        <div class="you-may-like-item">
+            <img src="images/table.jpeg" alt="You May Like Image 1">
+            <div class="you-may-like-description">
+                <p>Study table
+                    @ 700ksh
+                           </p>
+                <p>Buy now</p>
+            </div>
+        </div>
+        <div class="you-may-like-item">
+            <img src="images/gas.jpeg" alt="You May Like Image 2">
+            <div class="you-may-like-description">
+                <p>6kg gas cylinder
+                    @ 1500ksh 
+                           </p>
+                <p>Buy now</p>
+            </div>
+
+        </div>
+            <div class="you-may-like-item">
+                <img src="images/plastic.jpeg" alt="You May Like Image 2">
+                <div class="you-may-like-description">
+                    <p>Plastic chair
+                        @400sh
+                               </p>
+                    <p>Buy now</p>
+                </div>
+        </div>
+
+    </div>
+
+
+   
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show-menu');
+            console.log('Toggle menu clicked');
+        }
+    </script>
+    <div class="footer">
+        <p>Copyright © 2023 tuthogi programming school.All Rights Reserved. 
+        
+      </div>
+
+</body>
+
+
+</html>

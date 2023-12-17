@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Background color */
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background-color: #333; /* Hamburger button background color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+       
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+
+        .links-container {
+            flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+
+    padding: 10px;
+  
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
+
+.links-container a {
+    text-decoration: none;
+    color: blue; /* Change this to the desired text color */
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 50px solid; /* Set a large border around the links */
+    border-radius: 0;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Add margin between links to separate them vertically */
+}
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="links-container">
+        <a class="link1" href="">Fixer Contract</a>
+        <a class="link2" href="#">Sand Vinjo</a>
+        <a class="link3" href="#">Community</a>
+    
+    </div>
+    <div class="clear"></div>
+
+    <script>
+         function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
+</body>
+
+</html>

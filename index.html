@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; 
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background-color: #333; 
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+       
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+
+        .links-container {
+            flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
+
+.links-container a {
+    text-decoration: none;
+    color: blue;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 50px solid;
+    border-radius: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .party-container {
+            padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    top: 160px;
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    clear: both;
+        }
+
+        .party-item {
+            width: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 10px 20px 10px;
+    text-align: center;
+        }
+
+        .party-item img {
+            width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+        }
+
+        .party-details {
+            font-size: 16px;
+        }
+       
+
+/* ... other styles ...
+
+
+.links-container {
+    flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
+
+.links-container a {
+    text-decoration: none;
+    color: blue;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 50px solid;
+    border-radius: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.party-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    top: 160px;
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    clear: both;
+}
+
+.party-item {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 10px 20px 10px;
+    text-align: center;
+}
+
+.party-item img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.party-details {
+    font-size: 16px;
+}
+
+/* ... other styles ... */
+
+
+
+
+
+
+.links-container {
+    flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
+
+/* .links-container a:not(:last-child) {
+    margin-bottom: 100px; /* Increase margin between links to create separation */
+ 
+    .link1 {
+    /* background: url('images/image.jpg') no-repeat center center; */
+    background-size: cover;
+}
+.clear {
+    clear: both;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="links-container">
+        <a class="link1" href="parties.html">partys</a>
+        <a class="link2" href="bootcamp.html">BootCamp</a>
+        <a class="link3" href="#">vacation package</a>
+        <a class="link4" href="#">Concert Event  </a>
+       
+    </div>
+    <div class="party-container">
+        <div class="party-item">
+            <img src="images/image6.jpg" alt="Party 1">
+            <div class="party-details">
+                <p>Date: January 15, 2023</p>
+                <p>Time: 8:00 PM</p>
+                <p>Venue: Party Venue 1</p>
+            </div>
+        </div>
+
+        <div class="party-item">
+            <img src="images/image7.jpg" alt="Party 2">
+            <div class="party-details">
+                <p>Date: February 10, 2023</p>
+                <p>Time: 7:30 PM</p>
+                <p>Venue: Party Venue 2</p>
+            </div>
+        </div>
+
+        <div class="party-item">
+            <img src="images/image8.jpg" alt="Party 3">
+            <div class="party-details">
+                <p>Date: March 20, 2023</p>
+                <p>Time: 9:00 PM</p>
+                <p>Venue: Party Venue 3</p>
+            </div>
+        </div>
+
+        <div class="party-item">
+            <img src="images/image9.jpg" alt="Party 4">
+            <div class="party-details">
+                <p>Date: March 22, 2023</p>
+                <p>Time: 9:30 PM</p>
+                <p>Venue: Party Venue 4</p>
+            </div>
+        </div>
+     
+    </div>
+
+    <script>
+         function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
+</body>
+
+</html>
