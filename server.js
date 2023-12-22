@@ -5,7 +5,7 @@ const multer = require('multer');
 const app = express();
 const port = 3000;
 
-mongoose.connect('mongodb+srv://Tuthogi:<password>@cluster0.swcumaa.mongodb.net/campx', {
+mongoose.connect('mongodb+srv://Tuthogi:<37600273>@cluster0.swcumaa.mongodb.net/campx', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
